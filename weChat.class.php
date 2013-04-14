@@ -71,7 +71,6 @@ class weChat{
 
     function getUserByFakeid($fakeid){
         $client = $this->client;
-        //http://mp.weixin.qq.com/cgi-bin/getcontactinfo?t=ajax-getcontactinfo&lang=zh_CN&fakeid=1954145121
         $client->referer = 'http://mp.weixin.qq.com/cgi-bin/contactmanagepage?t=wxm-friend&lang=zh_CN&pagesize=10&pageidx=0&type=0&groupid=0&token='.$this->token;
         $client->post('/cgi-bin/getcontactinfo?t=ajax-getcontactinfo&lang=zh_CN&fakeid='.$fakeid, array(
             'ajax' => 1,
